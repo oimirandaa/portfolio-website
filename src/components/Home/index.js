@@ -3,13 +3,15 @@ import {Link} from "react-router-dom";
 import './index.scss';
 import {useEffect, useState} from "react";
 import AnimatedLetters from "../AnimatedLetters";
+import Logo from "./Logo";
 const Home = () =>{
+
     const [letterClass, setLetterClass] = useState('text-animate')
     const nameArray = ['l', 'o','b','o','d','a','n']
     const jobArray = ['f', 'u', 'l', 'l', 's', 't', 'a', 'c', 'k', ' ', 'd', 'e', 'v', 'e', 'l', 'o', 'p', 'e', 'r']
 
     useEffect(() => {
-        return setTimeout(() => {
+        setTimeout(() => {
             setLetterClass('text-animate-hover')
         }, 4000)
     }, [])
@@ -28,7 +30,7 @@ const Home = () =>{
                     <img src={LogoTitle} alt="developer"/>
                     <AnimatedLetters letterClass={letterClass} strArray={nameArray} idx={15}/>
                     <br/>
-                    <AnimatedLetters letterClass={letterClass} strArray={jobArray} idx={25}/>
+                    <AnimatedLetters letterClass={letterClass} strArray={jobArray} idx={17}/>
                     <br/>
                 </h1>
 
@@ -39,6 +41,7 @@ const Home = () =>{
                 </Link>
             </div>
         </div>
+            <Logo />
         </>
     )
 }
